@@ -28,6 +28,17 @@ Regenerate the file after dependency changes:
 uv export --no-dev --no-hashes -o requirements.txt
 ```
 
+## Notebooks
+
+Experiment with models under `notebooks/`. From the repo root:
+
+```bash
+uv sync
+uv run jupyter lab --notebook-dir notebooks
+```
+
+Create new `.ipynb` files in that folder (or open JupyterLab’s file browser and use **New**). Checkpoint folders under `notebooks/` are ignored by git via `.gitignore`.
+
 ## Smoke test
 
 ```bash
@@ -40,5 +51,6 @@ uv run python examples/smoke_test.py
 - `datasets`, `accelerate`, `huggingface-hub`
 - `torch` (pulled in by the above)
 - `rich`, `python-dotenv`
+- `jupyterlab` (notebooks)
 
 Lockfile: `uv.lock`. Project metadata: `pyproject.toml`.
