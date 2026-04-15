@@ -39,6 +39,8 @@ uv run jupyter lab --notebook-dir notebooks
 
 Create new `.ipynb` files in that folder (or open JupyterLab’s file browser and use **New**). Checkpoint folders under `notebooks/` are ignored by git via `.gitignore`.
 
+Start with `notebooks/01_hf_token_test.ipynb` to confirm `HF_TOKEN` from `.env` works with the Hub.
+
 ## Smoke test
 
 ```bash
