@@ -1,0 +1,34 @@
+# Windows + NVIDIA GPU requirements (uv/pip compatible)
+#
+# Goal: notebook-ready environment with CUDA PyTorch and llama.cpp support.
+#
+# One-time prerequisite for `llama-cpp-python` build on Windows:
+#   winget install --id Microsoft.VisualStudio.2022.BuildTools --accept-source-agreements --accept-package-agreements --override "--quiet --wait --norestart --nocache --add Microsoft.VisualStudio.Workload.VCTools --includeRecommended"
+#   winget install --id Microsoft.WindowsSDK.10.0.18362 --silent --accept-source-agreements --accept-package-agreements
+#
+# Install example:
+#   uv pip install --python .venv\Scripts\python.exe -r requirements_windows.txt
+
+# CUDA PyTorch wheels (Windows, NVIDIA)
+--extra-index-url https://download.pytorch.org/whl/cu126
+torch==2.11.0+cu126
+torchvision==0.26.0+cu126
+torchaudio==2.11.0+cu126
+
+# Notebook / Hugging Face stack
+accelerate==1.13.0
+datasets==4.8.4
+huggingface-hub==1.11.0
+python-dotenv==1.2.2
+rich==15.0.0
+safetensors==0.7.0
+sentencepiece==0.2.1
+tokenizers==0.22.2
+transformers==5.5.4
+
+# Notebook runtime
+ipykernel==7.2.0
+jupyterlab==4.5.6
+
+# Local GGUF notebook support (builds from source on Windows)
+llama-cpp-python==0.3.20
